@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "LearnActor.generated.h"
+#include "BaseGeometryActor.generated.h"
 
 UCLASS()
-class LEARNUNREALENGINE_API ALearnActor : public AActor
+class LEARNUNREALENGINE_API ABaseGeometryActor : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	ALearnActor();
+	ABaseGeometryActor();
 
 protected:
 	// Called when the game starts or when spawned
