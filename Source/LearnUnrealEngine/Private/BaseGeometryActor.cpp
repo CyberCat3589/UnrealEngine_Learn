@@ -21,6 +21,8 @@ void ABaseGeometryActor::BeginPlay()
 {
 	Super::BeginPlay();
 
+	InitialLocation = GetActorLocation();
+
 	//PrintTypes();
 	//PrintStringTypes();
 	//PrintTransform();
@@ -31,6 +33,7 @@ void ABaseGeometryActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	MovementSin();
 }
 
 void ABaseGeometryActor::PrintTypes()
@@ -73,5 +76,13 @@ void ABaseGeometryActor::PrintTransform()
 	UE_LOG(LogBaseGeometry, Warning, TEXT("Scale: %s"), *Scale.ToString());
 
 	UE_LOG(LogBaseGeometry, Error, TEXT("Human transform: %s"), *Transform.ToHumanReadableString());
+}
+
+void ABaseGeometryActor::MovementSin()
+{
+	FVector CurrentLocation = GetActorLocation();
+	float Time = GetWorld()->GetTimeSeconds();
+	CurrentLocation.Z = InitialLocation.Z + Amplitude * FMath::Sin(Frequency * Time);
+	SetActorLocation(CurrentLocation);
 }
 
