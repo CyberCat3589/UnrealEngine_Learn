@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/StaticMeshComponent.h"
 
 #include "BaseGeometryActor.generated.h"
 
@@ -15,6 +16,9 @@ class LEARNUNREALENGINE_API ABaseGeometryActor : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ABaseGeometryActor();
+
+	UPROPERTY(VisibleAnywhere)
+	UStaticMeshComponent* BaseMesh;
 
 protected:
 	// Called when the game starts or when spawned
@@ -42,4 +46,5 @@ public:
 private:
 	void PrintTypes();
 	void PrintStringTypes();
+	void PrintTransform();
 };
