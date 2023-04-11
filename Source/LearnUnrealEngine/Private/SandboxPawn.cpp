@@ -3,6 +3,8 @@
 
 #include "SandboxPawn.h"
 #include "Components\InputComponent.h"
+#include "Components\StaticMeshComponent.h"
+#include "Camera\CameraComponent.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogSandboxPawn, All, All)
 
@@ -14,6 +16,12 @@ ASandboxPawn::ASandboxPawn()
 
 	SceneComponent = CreateDefaultSubobject<USceneComponent>("SceneComponent");
 	SetRootComponent(SceneComponent);
+
+	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("StaticMeshComponent");
+	StaticMeshComponent->SetupAttachment(GetRootComponent());
+
+	CameraComponent = CreateDefaultSubobject<UCameraComponent>("CameraComponent");
+	CameraComponent->SetupAttachment(GetRootComponent());
 }
 
 // Called when the game starts or when spawned
