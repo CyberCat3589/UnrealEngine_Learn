@@ -13,5 +13,7 @@ UCLASS()
 class LEARNUNREALENGINE_API ALearnUnrealEngineGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+	public:
+	ALearnUnrealEngineGameModeBase();
 };

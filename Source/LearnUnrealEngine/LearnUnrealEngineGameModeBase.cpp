@@ -2,4 +2,9 @@
 
 
 #include "LearnUnrealEngineGameModeBase.h"
+#include "SandboxPawn.h"
 
+ALearnUnrealEngineGameModeBase::ALearnUnrealEngineGameModeBase()
+{
+	DefaultPawnClass = ASandboxPawn::StaticClass();
+}
